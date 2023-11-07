@@ -51,6 +51,11 @@ multicloud:
 #commonLabels:
 #  prometheus.io/monitor: "true"
 
+# Use an existing secret
+existingSecret:
+  enabled: false
+  name: openstack-config
+
 # Generate a secret for clouds.yaml
 # Doc: https://github.com/openstack-exporter/openstack-exporter#openstack-configuration
 clouds_yaml_config: |
