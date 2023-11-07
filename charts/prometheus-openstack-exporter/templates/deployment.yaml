@@ -42,6 +42,10 @@ spec:
         - name: {{ quote $name }}
           value: {{ quote $value }}
         {{- end }}
+      {{- with .Values.image.pullSecrets }}
+      imagePullSecrets:
+      {{- toYaml . | nindent 6 }}
+      {{- end }}
       volumes:
       - name: openstack-config
         secret:
